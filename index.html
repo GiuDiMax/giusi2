@@ -29,11 +29,11 @@
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 -mt-8 pb-20">
+    <main class="max-w-6xl mx-auto px-4 -mt-8 pb-20">
         
         <!-- Sindaco Highlight -->
         <section class="bg-white rounded-3xl p-8 shadow-2xl mb-12 border-t-8 border-green-500">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div class="flex items-center gap-6">
                     <div class="relative">
                         <div class="absolute -inset-1 bg-gradient-to-tr from-yellow-300 to-green-600 rounded-full blur opacity-25"></div>
@@ -44,11 +44,22 @@
                         <h2 class="text-4xl font-extrabold text-slate-900">Giusi Pepe</h2>
                     </div>
                 </div>
-                <div class="flex flex-wrap gap-4">
-                    <a href="/files/pepe_giusi_cv.pdf" title="Scarica curriculum vitae" class="btn-hover flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
+
+                <!-- Bottoni Sindaco -->
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="programma.pdf" 
+                       title="Scarica il programma elettorale" 
+                       class="btn-hover flex items-center gap-2 bg-yellow-500 text-yellow-950 px-5 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
+                        <i data-lucide="book-open" class="w-5 h-5"></i> Programma
+                    </a>
+                    <a href="/files/pepe_giusi_cv.pdf" 
+                       title="Scarica curriculum vitae" 
+                       class="btn-hover flex items-center gap-2 bg-green-600 text-white px-5 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
                         <i data-lucide="file-text" class="w-5 h-5"></i> CV
                     </a>
-                    <a href="/files/pepe_giusi_ccg.pdf" title="Scarica certificato del casellario giudiziale" class="btn-hover flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
+                    <a href="/files/pepe_giusi_ccg.pdf" 
+                       title="Scarica certificato del casellario giudiziale" 
+                       class="btn-hover flex items-center gap-2 bg-slate-800 text-white px-5 py-3 rounded-xl font-bold uppercase text-sm shadow-md">
                         <i data-lucide="gavel" class="w-5 h-5"></i> CCG
                     </a>
                 </div>
@@ -58,7 +69,7 @@
         <!-- Consiglieri -->
         <div class="mb-8 px-2">
             <h3 class="text-2xl font-black uppercase text-slate-900 flex items-center gap-3">
-                <i data-lucide="users" class="text-green-600"></i> Lista Consiglieri
+                <i data-lucide="users" class="text-green-600"></i> Lista Consiglieri 2026
             </h3>
         </div>
 
@@ -72,17 +83,16 @@
                 ];
 
                 const formatFileName = (name) => {
-                    // Toglie tutto ciò che inizia con " detto" o " detta"
                     return name.split(/ dett[oa]/i)[0].trim().toLowerCase().replace(/ /g, '_');
                 };
 
                 const formatDisplayName = (name) => {
-                    // Regex per catturare "detto" o "detta" e trasformarli sempre in "detto" grassetto/corsivo
-                    const regex = / dett[oa] (.+)/i;
+                    // Cattura "detto" o "detta" per mantenere il genere corretto nel testo
+                    const regex = / (dett[oa]) (.+)/i;
                     if (regex.test(name)) {
                         const match = name.match(regex);
                         const baseName = name.split(/ dett[oa]/i)[0];
-                        return `${baseName} <span class="italic font-bold text-slate-600 text-sm italic">detto ${match[1]}</span>`;
+                        return `${baseName} <span class="italic font-bold text-slate-600 text-sm italic">${match[1]} ${match[2]}</span>`;
                     }
                     return name;
                 };
@@ -112,7 +122,7 @@
     <footer class="bg-slate-900 text-slate-400 py-12 text-center border-t-4 border-green-600">
         <div class="max-w-5xl mx-auto px-4">
             <p class="text-white font-bold text-lg mb-2">La Priorità: Capurso - Giusi Pepe Sindaco</p>
-            <p class="text-xs opacity-50 tracking-widest uppercase">Documentazione pubblicata ai sensi della Legge 3/2019</p>
+            <p class="text-xs opacity-50 tracking-widest uppercase">Documentazione pubblicata ai sensi della Legge 3/2019 - Elezioni 2026</p>
         </div>
     </footer>
 
